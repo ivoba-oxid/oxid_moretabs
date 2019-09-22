@@ -1,9 +1,7 @@
 <?php
-$sLangName  = "English";
-// -------------------------------
-// RESOURCE IDENTITFIER = STRING
-// -------------------------------
-$aLang = array(
+$sLangName = "English";
+
+$aLang = [
   'charset' => 'UTF-8',
   'article_moretabs' => 'additional tabs',
   'ARTICLE_TAB_EXPLAINATION' => 'Here you can configure additional tabs which will be shown on the product page.',
@@ -20,5 +18,4 @@ $aLang = array(
   'ARTICLE_TAB_POSITION_MEDIA' => 'after the media tab',
   'ARTICLE_TAB_DESC' => 'Text',
   'ARTICLE_TAB_NEW_TAB' => 'add new tab',
-);
-
+];

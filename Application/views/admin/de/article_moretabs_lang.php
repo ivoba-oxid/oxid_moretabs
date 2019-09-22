@@ -1,9 +1,7 @@
 <?php
 $sLangName  = "Deutsch";
-// -------------------------------
-// RESOURCE IDENTITFIER = STRING
-// -------------------------------
-$aLang = array(
+
+$aLang = [
   'charset' => 'UTF-8',
   'article_moretabs' => 'zusätzliche Tabs',
   'ARTICLE_TAB_EXPLAINATION' => 'Hier können Sie zusätzliche Tabs definieren, die auf der Artikel-Seite angezeigt werden.',
@@ -20,5 +18,4 @@ $aLang = array(
   'ARTICLE_TAB_POSITION_MEDIA' => 'nach dem Tab "Medien"',
   'ARTICLE_TAB_DESC' => 'Text',
   'ARTICLE_TAB_NEW_TAB' => 'Neuen Tab hinzufügen',
-);
-
+];

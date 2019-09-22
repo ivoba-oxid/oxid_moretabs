@@ -1,5 +1,7 @@
 <?php
-class article_moretabs extends oxAdminDetails {
+namespace SeemannIT\MoreTabsModule\Application\Controller\Admin;
+
+class AdminDetailsController extends \OxidEsales\EshopCommunity\Application\Controller\Admin\AdminDetailsController {
     /**
      * Loads article data from DB, passes it to Smarty engine, returns name
      * of template file "article_userdef.tpl".
@@ -31,12 +33,12 @@ class article_moretabs extends oxAdminDetails {
             // load object
             $oArticle->load( $soxId );
 
-            $aLang = array_diff (oxRegistry::getLang()->getLanguageNames(), $oOtherLang);
+            $aLang = array_diff(\OxidEsales\Eshop\Core\Registry::getLang()->getLanguageNames(), $oOtherLang);
             if ( count( $aLang))
                 $this->_aViewData["posslang"] = $aLang;
 
             foreach ( $oOtherLang as $id => $language) {
-                $oLang= new stdClass();
+                $oLang= new \stdClass();
                 $oLang->sLangDesc = $language;
                 $oLang->selected = ($id == $this->_iEditLang);
                 $this->_aViewData["otherlang"][$id] =  clone $oLang;
@@ -57,8 +59,8 @@ class article_moretabs extends oxAdminDetails {
         $sEditObjectValue = '';
         if ( $oObject ) {
             $oDescField = $oObject->getTabDesc($num);
-            $sEditObjectValue = $this->_processEditValue( $oDescField->getRawValue() );
-            $oDescField = new oxField( $sEditObjectValue, oxField::T_RAW );
+            $sEditObjectValue = $this->_processEditValue($oDescField->getRawValue());
+            $oDescField = new \OxidEsales\Eshop\Core\Field($sEditObjectValue, \OxidEsales\Eshop\Core\Field::T_RAW);
         }
         return $sEditObjectValue;
     }
@@ -72,7 +74,7 @@ class article_moretabs extends oxAdminDetails {
         $aParams = $myConfig->getRequestParameter("editval");
 
         // shopid
-        $sShopID = oxRegistry::getSession()->getVariable("actshop");
+        $sShopID = \OxidEsales\Eshop\Core\Registry::getSession()->getVariable("actshop");
         $aParams['oxarticles__oxshopid'] = $sShopID;
 
         $oArticle = oxNew("oxarticle");
@@ -90,8 +92,8 @@ class article_moretabs extends oxAdminDetails {
         $oArticle->assign($aParams);
 
         //tells to article to save in different language
-        $oArticle->setLanguage( $this->_iEditLang );
-        $oArticle = oxRegistry::get("oxUtilsFile")->processFiles($oArticle);
+        $oArticle->setLanguage($this->_iEditLang);
+        $oArticle = \OxidEsales\Eshop\Core\Registry::get("oxUtilsFile")->processFiles($oArticle);
         $oArticle->save();
     }
 }
