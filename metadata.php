@@ -52,4 +52,7 @@ $aModule = [
     'templates' => [
         'article_moretabs.tpl' => 'seemannit/moretabs/Application/views/blocks/admin/article_moretabs.tpl',
     ],
+    'events'      => [
+        'onActivate'   => '\SeemannIT\MoreTabsModule\Core\MoreTabsModule::onActivate',
+    ],
 ];
