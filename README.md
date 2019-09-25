@@ -2,6 +2,13 @@
 
 Mit diesem Modul können Sie zusätzliche Tabs auf den Artikelseiten hinzufügen. Die Konfiguration erfolgt bequem via Backend.
 
+## Installation
+
+Sie können das Modul bequem über composer installieren:
+```bash
+composer require seemannit/more-tabs
+```
+
 ## Features
 
 * Pro Artikel können bis zu 5 zusätzliche Tabs hinzugefügt werden.
@@ -11,4 +18,6 @@ Mit diesem Modul können Sie zusätzliche Tabs auf den Artikelseiten hinzufügen
 
 ## Kompatibilität
 
-Dieses Modul ist kompatibel mit OXID ab Version 4.7.0. Es funktioniert mit der aktuellen Version 4.10.x. Es ist kompatibel sowohl mit auf Azure oder auf Flow basierenden Templates als auch mit allen Templates der ROXID-Reihe.
+Dieses Modul ist kompatibel mit OXID ab Version 6.x. Es ist kompatibel sowohl mit auf Azure oder auf Flow basierenden Templates als auch mit allen Templates der ROXID-Reihe.
+
+Eine mit OXID 4.10.x kompatible Version ist im Branch [oxid-4.x](https://github.com/marten-seemann/oxid_moretabs/tree/oxid-4.x) verfügbar.
