@@ -1,4 +1,4 @@
-CREATE TABLE `mstabs` (
+CREATE TABLE IF NOT EXISTS `mstabs` (
   `OXID` char(32) CHARACTER SET latin1 COLLATE latin1_general_ci NOT NULL COMMENT 'Article id (extends oxarticles article with this id)',
   `TAB1_POS` varchar(127) NOT NULL,
   `TAB1_TITLE` varchar(1023) NOT NULL,
