@@ -2,9 +2,9 @@
 
 [{foreach from=$oDetailsProduct->getPossibeTabNums() item=num}]
     [{if strlen($oDetailsProduct->getTabTitle($num)) > 0 && $oDetailsProduct->getTabPos($num) == "pricealarm"}]
-        [{capture append="tabs"}]<a href="#ms_tab[{$num}]" data-toggle="tab">[{$oDetailsProduct->getTabTitle($num)}]</a>[{/capture}]
+        [{capture append="tabs"}]<a class="nav-link[{if $blFirstTab}] active[{/if}]" href="#ms_tab[{$num}]" data-toggle="tab">[{$oDetailsProduct->getTabTitle($num)}]</a>[{/capture}]
         [{capture append="tabsContent"}]
-            <div id="ms_tab[{$num}]" class="tab-pane">
+            <div id="ms_tab[{$num}]" class="tab-pane[{if $blFirstTab}] active[{/if}]">
                 [{$oDetailsProduct->getTabDesc($num, true)}]
             </div>
         [{/capture}]
